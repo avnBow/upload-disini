@@ -1,0 +1,797 @@
+!<DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SchoolFest 2026 - Event Sekolah</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f7fb;
+            color: #222;
+            line-height: 1.6;
+        }
+
+        header {
+            background: #172554;
+            color: white;
+            padding: 18px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: bold;
+        }
+
+        .logo span {
+            color: #38bdf8;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #38bdf8;
+        }
+
+        .hero {
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 40px 20px;
+
+            background:
+                linear-gradient(rgba(23, 37, 84, 0.8), rgba(30, 64, 175, 0.8)),
+                url("https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1600&q=80");
+
+            background-size: cover;
+            background-position: center;
+            color: white;
+        }
+
+        .hero-content {
+            max-width: 850px;
+        }
+
+        .hero h1 {
+            font-size: 55px;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 span {
+            color: #38bdf8;
+        }
+
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 25px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #38bdf8;
+            color: #082f49;
+            padding: 13px 25px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 5px;
+        }
+
+        .btn:hover {
+            background: white;
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid white;
+            color: white;
+        }
+
+        .countdown {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .time-box {
+            background: rgba(255,255,255,0.15);
+            padding: 15px 20px;
+            border-radius: 10px;
+            min-width: 90px;
+        }
+
+        .time-box h2 {
+            font-size: 28px;
+        }
+
+        .time-box p {
+            font-size: 13px;
+            margin: 0;
+        }
+
+        section {
+            padding: 70px 7%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-title h2 {
+            color: darkgray;
+            font-size: 35px;
+        }
+
+        .section-title p {
+            color: #64748b;
+        }
+
+        .about {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .about img {
+            width: 100%;
+            border-radius: 15px;
+        }
+
+        .about-text h3 {
+            color: #1d4ed8;
+            font-size: 28px;
+            margin-bottom: 15px;
+        }
+
+        .info-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .info-card {
+            background: white;
+            padding: 25px;
+            text-align: center;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+
+        .info-card .icon {
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
+
+        .info-card h3 {
+            color: #172554;
+        }
+
+        .table-container {
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        th {
+            background: #172554;
+            color: white;
+            padding: 15px;
+        }
+
+        td {
+            padding: 15px;
+            border-bottom: 1px solid #ddd;
+            text-align: center;
+        }
+
+        tr:hover {
+            background: #eff6ff;
+        }
+
+        .team {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .team-card {
+            background: white;
+            text-align: center;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+
+        .team-card img {
+            width: 130px;
+            height: 130px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin-bottom: 15px;
+        }
+
+        .team-card h3 {
+            color: #172554;
+        }
+
+        .team-card p {
+            color: #64748b;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 12px;
+            transition: 0.3s;
+        }
+
+        /* .gallery img:hover {
+            transform: scale(1.03);
+        } */
+
+        .form-container {
+            max-width: 700px;
+            margin: auto;
+            background: white;
+            padding: 35px;
+            border-radius: 15px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 7px;
+            font-weight: bold;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #cbd5e1;
+            border-radius: 7px;
+            font-size: 15px;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        button {
+            width: 100%;
+            padding: 14px;
+            border: none;
+            border-radius: 8px;
+            background: #1d4ed8;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #172554;
+        }
+
+        footer {
+            background: #172554;
+            color: white;
+            text-align: center;
+            padding: 30px;
+        }
+
+        footer span {
+            color: #38bdf8;
+        }
+
+        @media (max-width: 800px) {
+
+            header {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav a {
+                margin: 5px;
+                font-size: 13px;
+            }
+
+            .hero h1 {
+                font-size: 38px;
+            }
+
+            .about,
+            .info-container,
+            .team,
+            .gallery {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery img {
+                height: 250px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">School<span>Fest</span></div>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#tentang">Tentang</a>
+        <a href="#jadwal">Jadwal</a>
+        <a href="#galeri">Galeri</a>
+        <a href="#daftar">Daftar</a>
+    </nav>
+</header>
+
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <h1>
+            SCHOOL<span>FEST</span> 2026
+        </h1>
+
+        <p>
+            Festival Kreativitas dan Prestasi Siswa
+        </p>
+
+        <p>
+            Lomba • Seminar • Class Meeting • Pentas Seni • Workshop
+        </p>
+
+        <a href="#daftar" class="btn">
+            Daftar Sekarang
+        </a>
+
+        <a href="#jadwal" class="btn btn-outline">
+            Lihat Jadwal
+        </a>
+
+        <div class="countdown">
+
+            <div class="time-box">
+                <h2 id="days">24</h2>
+                <p>Hari</p>
+            </div>
+
+            <div class="time-box">
+                <h2 id="hours">80</h2>
+                <p>Jam</p>
+            </div>
+
+            <div class="time-box">
+                <h2 id="minutes">00</h2>
+                <p>Menit</p>
+            </div>
+
+            <div class="time-box">
+                <h2 id="seconds">00</h2>
+                <p>Detik</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section id="tentang">
+
+    <div class="section-title">
+        <h2>Tentang Event</h2>
+        <p>Kenali lebih dekat kegiatan SchoolFest 2026</p>
+    </div>
+
+    <div class="about">
+
+        <img src="https://i.pinimg.com/1200x/ab/2d/69/ab2d69e902f338ac75c459c9f72d5a17.jpg"
+             alt="Kegiatan siswa">
+
+        <div class="about-text">
+
+            <h3>Festival Kreativitas Siswa</h3>
+
+            <p>
+                SchoolFest 2026 merupakan kegiatan sekolah yang
+                diselenggarakan untuk mengembangkan kreativitas,
+                bakat, prestasi, dan kemampuan siswa.
+            </p>
+
+            <br>
+
+            <p>
+                Dalam kegiatan ini terdapat berbagai macam acara
+                seperti lomba akademik, lomba seni, class meeting,
+                seminar pendidikan, pentas seni, serta workshop.
+            </p>
+
+            <br>
+
+            <p>
+                Acara ini terbuka untuk seluruh siswa dan menjadi
+                kesempatan untuk menunjukkan kemampuan serta
+                membangun kerja sama antarsiswa.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section>
+
+    <div class="section-title">
+        <h2>Informasi Acara</h2>
+        <p>Catat informasi penting SchoolFest 2026</p>
+    </div>
+
+    <div class="info-container">
+
+        <div class="info-card">
+            <div class="icon">📅</div>
+            <h3>24 September 2026</h3>
+            <p>Tanggal Pelaksanaan</p>
+        </div>
+
+        <div class="info-card">
+            <div class="icon">⏰</div>
+            <h3>08.00 - 16.00</h3>
+            <p>Waktu Pelaksanaan</p>
+        </div>
+
+    </div>
+
+</section>
+
+<section id="jadwal">
+
+    <div class="section-title">
+        <h2>Rundown Acara</h2>
+        <p>Jadwal kegiatan SchoolFest 2026</p>
+    </div>
+
+    <div class="table-container">
+
+        <table>
+
+            <thead>
+                <tr>
+                    <th>Waktu</th>
+                    <th>Kegiatan</th>
+                    <th>Tempat</th>
+                    <th>Penanggung Jawab</th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+                <tr>
+                    <td>08.00 - 08.30</td>
+                    <td>Registrasi Peserta</td>
+                    <td>Aula</td>
+                    <td>Seksi Acara</td>
+                </tr>
+
+                <tr>
+                    <td>08.30 - 09.00</td>
+                    <td>Pembukaan</td>
+                    <td>Aula</td>
+                    <td>Ketua Panitia</td>
+                </tr>
+
+                <tr>
+                    <td>09.00 - 10.30</td>
+                    <td>Seminar Pendidikan</td>
+                    <td>Aula</td>
+                    <td>Seksi Seminar</td>
+                </tr>
+
+                <tr>
+                    <td>10.30 - 12.00</td>
+                    <td>Lomba Kreativitas</td>
+                    <td>Ruang Kelas</td>
+                    <td>Seksi Lomba</td>
+                </tr>
+
+                <tr>
+                    <td>12.00 - 13.00</td>
+                    <td>Istirahat</td>
+                    <td>-</td>
+                    <td>Panitia</td>
+                </tr>
+
+                <tr>
+                    <td>13.00 - 14.30</td>
+                    <td>Class Meeting</td>
+                    <td>Lapangan</td>
+                    <td>Seksi Olahraga</td>
+                </tr>
+
+                <tr>
+                    <td>14.30 - 16.00</td>
+                    <td>Pentas Seni & Penutupan</td>
+                    <td>Panggung Utama</td>
+                    <td>Seksi Acara</td>
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</section>
+
+<section id="galeri">
+
+    <div class="section-title">
+        <h2>Kegiatan</h2>
+        <p>Dokumentasi kegiatan sekolah</p>
+    </div>
+
+    <div class="gallery">
+
+        <img src="https://i.pinimg.com/1200x/c3/81/92/c381928332eabafcb978f52df0c2a8a7.jpg"
+             alt="Kegiatan sekolah">
+
+        <img src="https://i.pinimg.com/1200x/f2/08/56/f208560a8cb74adc78704c697f8046f6.jpg"
+             alt="Workshop">
+
+        <img src="https://i.pinimg.com/736x/7a/66/ee/7a66ee943c0a559207c31040c7f017e0.jpg"
+             alt="Kegiatan siswa">
+
+        <img src="https://i.pinimg.com/736x/13/c1/da/13c1da86e14610e9815c524d31b6f121.jpg"
+             alt="Seminar">
+
+        <img src="https://i.pinimg.com/1200x/18/49/2b/18492b686f6f8c231127ce995c22ea02.jpg"
+             alt="Pentas seni">
+
+        <img src="https://i.pinimg.com/736x/b1/ca/11/b1ca116f989c21f84c56afed3b69c7ea.jpg"
+             alt="Event sekolah">
+
+    </div>
+
+</section>
+
+
+<section id="daftar">
+
+    <div class="section-title">
+        <h2>Form Pendaftaran</h2>
+        <p>Daftarkan dirimu untuk mengikuti SchoolFest 2026</p>
+    </div>
+
+    <div class="form-container">
+
+        <form onsubmit="daftarEvent(event)">
+
+            <div class="form-group">
+                <label for="nama">Nama Lengkap</label>
+                <input type="text"
+                       id="nama"
+                       placeholder="Masukkan nama lengkap"
+                       required>
+            </div>
+
+            <div class="form-group">
+                <label for="kelas">Kelas</label>
+                <input type="text"
+                       id="kelas"
+                       placeholder="Contoh: XI RPL 1"
+                       required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email"
+                       id="email"
+                       placeholder="Masukkan email"
+                       required>
+            </div>
+
+            <div class="form-group">
+                <label for="acara">Pilih Kegiatan</label>
+
+                <select id="acara" required>
+
+                    <option value="">
+                        -- Pilih Kegiatan --
+                    </option>
+
+                    <option>
+                        Lomba Kreativitas
+                    </option>
+
+                    <option>
+                        Seminar Pendidikan
+                    </option>
+
+                    <option>
+                        Class Meeting
+                    </option>
+
+                    <option>
+                        Pentas Seni
+                    </option>
+
+                    <option>
+                        Workshop
+                    </option>
+
+                </select>
+
+            </div>
+
+            <div class="form-group">
+
+                <label for="pesan">
+                    Pesan / Keterangan
+                </label>
+
+                <textarea id="pesan"
+                          placeholder="Tuliskan keterangan jika diperlukan">
+                </textarea>
+
+            </div>
+
+            <button type="submit">
+                Daftar Sekarang
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
+
+
+<footer>
+
+    <h3>School<span>Fest</span> 2026</h3>
+
+    <p>
+        Festival Kreativitas dan Prestasi Siswa
+    </p>
+
+    <p>
+        © 2026 SchoolFest.Risma marhotus sholikah.
+    </p>
+
+</footer>
+
+
+<script>
+
+    const tanggalEvent =
+        new Date("September 20, 2026 08:00:00").getTime();
+
+
+    const countdown = setInterval(function() {
+
+        const sekarang = new Date().getTime();
+
+        const jarak = tanggalEvent - sekarang;
+
+
+        const hari =
+            Math.floor(jarak / (1000 * 60 * 60 * 24));
+
+        const jam =
+            Math.floor(
+                (jarak % (1000 * 60 * 60 * 24))
+                / (1000 * 60 * 60)
+            );
+
+        const menit =
+            Math.floor(
+                (jarak % (1000 * 60 * 60))
+                / (1000 * 60)
+            );
+
+        const detik =
+            Math.floor(
+                (jarak % (1000 * 60))
+                / 1000
+            );
+
+
+        document.getElementById("days").innerHTML =
+            hari > 0 ? hari : 0;
+
+        document.getElementById("hours").innerHTML =
+            jam > 0 ? jam : 0;
+
+        document.getElementById("minutes").innerHTML =
+            menit > 0 ? menit : 0;
+
+        document.getElementById("seconds").innerHTML =
+            detik > 0 ? detik : 0;
+
+
+        if (jarak < 0) {
+
+            clearInterval(countdown);
+
+            document.querySelector(".countdown").innerHTML =
+                "<h2>🎉 EVENT SEDANG BERLANGSUNG!</h2>";
+
+        }
+
+    }, 1000);
+
+
+    function daftarEvent(event) {
+
+        event.preventDefault();
+
+        const nama =
+            document.getElementById("nama").value;
+
+        const acara =
+            document.getElementById("acara").value;
+
+
+        alert(
+            "Pendaftaran berhasil! 🎉\n\n" +
+            "Nama: " + nama +
+            "\nKegiatan: " + acara
+        );
+
+    }
+
+</script>
+
+</body>
+</html>
