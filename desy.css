@@ -1,0 +1,196 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial,sans-serif;
+    background-color:#f4f4f4;
+    color:#333;
+    line-height:1.6;
+}
+
+header{
+    background-color:navy;
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+
+header h1{
+    margin-bottom:10px;
+}
+
+nav{
+    background-color:royalblue;
+}
+
+nav ul{
+    display:flex;
+    justify-content:center;
+    list-style:none;
+}
+
+nav ul li{
+    margin:15px;
+}
+
+nav ul li a{
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+nav ul li a:hover{
+    color:yellow;
+    transition:0.3s;
+}
+
+section{
+    padding:30px;
+}
+
+#home h2{
+    color:navy;
+    text-align: center;
+}
+
+#tentang{
+    background-color:#f0f4ff;
+}
+
+#jurusan h2,
+#fasilitas h2,
+#galeri h2,
+#kontak h2,
+#lokasi h2,
+#tentang h2{
+    color:navy;
+    margin-bottom:15px;
+    text-align: center;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    margin-top:10px;
+}
+
+table,th,td{
+    border:1px solid black;
+}
+
+th{
+    background-color:navy;
+    color:white;
+}
+ 
+th,td{
+    padding:10px;
+    text-align:center;
+}
+
+#fasilitas ul{
+    margin-left:20px;
+    text-align: center;
+    /* display: flex;
+    justify-content: center; */
+    list-style-position: inside;
+}
+
+#fasilitas li{
+    margin-bottom:10px;
+}
+
+.galeri{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+    margin-top:15px;
+}
+
+.galeri img{
+    width:300px;
+    height:200px;
+    object-fit:cover;
+    border-radius:10px;
+    box-shadow:0 2px 8px rgba(0,0,0,0.2);
+}
+
+.galeri img:hover{
+    transform:scale(1.05);
+    transition:0.3s;
+}
+
+form{
+    max-width:500px;
+    margin:auto;
+}
+
+label{
+    display:block;
+    margin-top:10px;
+}
+
+input,
+textarea{
+    width:100%;
+    padding:10px;
+    margin-top:5px;
+    border:1px solid #ccc;
+    border-radius:5px;
+}
+
+button{
+    margin-top:15px;
+    padding:10px 20px;
+    background-color:navy;
+    color:white;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+button:hover{
+    background-color:royalblue;
+    transition:0.3s;
+}
+
+iframe{
+    width:100%;
+    border:0;
+    border-radius:10px;
+    margin-top:10px;
+}
+
+footer{
+    background-color:navy;
+    color:white;
+    text-align:center;
+    padding:15px;
+    margin-top:20px;
+}
+
+@media(max-width:768px){
+
+    nav ul{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .galeri img{
+        width:100%;
+        height:auto;
+    }
+
+    table{
+        font-size:14px;
+    }
+
+    body{
+        font-size:14px;
+    }
+
+}
