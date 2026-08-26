@@ -1,0 +1,163 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f0f8ff;
+    color: #333;
+}
+
+header {
+    background-color: #2e8b57;
+    color: maroon;
+    text-align: center;
+    padding: 30px;
+}
+
+header h1 {
+    margin: 0;
+}
+
+header p {
+    margin-top: 10px;
+}
+
+nav {
+    background-color: #1f6b42;
+    text-align: center;
+    padding: 15px;
+}
+
+nav a {
+    color: burlywood;
+    text-decoration: none;
+    margin: 10px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: blueviolet;
+    background-color: papayawhip;
+}
+
+section {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+}
+
+h2 {
+    color: maroon;
+}
+#hero h2 {
+    color: black;
+}
+#hero {
+    text-align: center;
+}
+
+#hero img {
+    width: 400px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+#fasilitas ul {
+    padding-left: 20px;
+}
+
+#fasilitas li {
+    margin-bottom: 10px;
+}
+
+/* Galeri */
+#galeri {
+    text-align: center;
+}
+
+#galeri img {
+    width: 200px;
+    height: 150px;
+    object-fit: cover;
+    margin: 5px;
+    border-radius: 10px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th {
+    background-color: #2e8b57;
+    color: white;
+}
+
+th,
+td {
+    padding: 12px;
+    text-align: left;
+}
+
+iframe {
+    width: 100%;
+    border: 0;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #999;
+    border-radius: 5px;
+}
+
+button {
+    background-color: #2e8b57;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #1f6b42;
+}
+
+footer {
+    background-color: #1f6b42;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 30px;
+}
+
+@media (max-width: 600px) {
+    nav a {
+        display: block;
+        margin: 15px;
+    }
+
+    section {
+        margin: 15px;
+    }
+
+    #hero img {
+        width: 100px;
+        height: 100px;
+    }
+
+    #galeri img {
+        display: flex;
+        width: 100px;
+        height: 100px;
+        margin: 10px auto;
+        
+    }
+}
